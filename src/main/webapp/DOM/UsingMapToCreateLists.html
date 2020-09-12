@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="list"></div>
+        <form id="form">
+            <input type="text" id="name">
+            <input type="submit" value="Add name">
+            <input type="button" id="removeFirst" value="Remove first">
+            <input type="button" id="removeLast" value="Remove last">
+        </form>
+
+        <script>
+            var names = ["Lars", "Peter", "Jan", "Ian"];
+
+            var toHTML = function (array) {
+                var result = ["<ul>", "</ul>"];
+                var li = array.map(name => "<li>" + name + "</li>");
+
+                result.splice(1, 0, li.join(""));
+
+                document.getElementById("list").innerHTML = result.join("");
+            };
+
+            window.onload = function () {
+                toHTML(names);
+            };
+            
+            document.getElementById("form").addEventListener("submit", function(e){
+                e.preventDefault();
+                
+                names.push(document.getElementById("name").value);
+                document.getElementById("name").value = "";
+                toHTML(names);
+            });
+            
+            document.getElementById("removeFirst").addEventListener("click", function(){
+                names.shift();
+                toHTML(names);
+            });
+            
+            document.getElementById("removeLast").addEventListener("click", function (){
+                names.pop();
+                toHTML(names);
+            });
+        </script>
+    </body>
+</html>

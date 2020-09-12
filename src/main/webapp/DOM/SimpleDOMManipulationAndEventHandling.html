@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="div1"><a>Div 1</a></div>
+        <div id="div2"><a>Div 2</a></div>
+        <div id="div3"><a>Div 3</a></div>
+
+        <button id="myBtn">Skift farverne</button>
+
+        <script>
+            document.getElementById("myBtn").addEventListener("click", function(){
+                document.getElementById("div1").style.backgroundColor = getRandomColor();
+                document.getElementById("div2").style.backgroundColor = getRandomColor();
+                document.getElementById("div3").style.backgroundColor = getRandomColor();
+            });
+            
+            function getRandomColor() {
+                var letters = '0123456789ABCDEF';
+                var color = '#';
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        </script>
+    </body>
+</html>
