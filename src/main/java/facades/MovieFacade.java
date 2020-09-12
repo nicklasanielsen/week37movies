@@ -99,7 +99,7 @@ public class MovieFacade {
             em.getTransaction().begin();
             em.createNamedQuery("Movie.deleteAllRows").executeUpdate();
             em.persist(new Movie(2008, "Iron Man", new String[]{"Robert Downey Jr.", "Jon Favreau", "Gwyneth Paltrow"}));
-            em.persist(new Movie(1997, "Teletubbies", new String[]{"Tinky Winky", "Dipsy", "Dipsy", "Po"}));
+            em.persist(new Movie(1997, "Teletubbies", new String[]{"Tinky Winky", "Dipsy", "Laa-Laa", "Po"}));
             em.persist(new Movie(2013, "Test", new String[]{"Matthew Risch", "Kristoffer Cusick"}));
             em.getTransaction().commit();
         } finally {

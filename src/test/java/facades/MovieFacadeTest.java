@@ -48,7 +48,7 @@ public class MovieFacadeTest {
         EntityManager em = emf.createEntityManager();
 
         movies.add(new Movie(2008, "Iron Man", new String[]{"Robert Downey Jr.", "Jon Favreau", "Gwyneth Paltrow"}));
-        movies.add(new Movie(1997, "Teletubbies", new String[]{"Tinky Winky", "Dipsy", "Dipsy", "Po"}));
+        movies.add(new Movie(1997, "Teletubbies", new String[]{"Tinky Winky", "Dipsy", "Laa-Laa", "Po"}));
         movies.add(new Movie(2013, "Test", new String[]{"Matthew Risch", "Kristoffer Cusick"}));
 
         try {
